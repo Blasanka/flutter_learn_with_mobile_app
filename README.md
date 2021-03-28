@@ -1,6 +1,6 @@
-# srp_parent_mobile
+# student_resource_mobile
 
-Student Resource Planning Zeta mobile app
+Student Resource mobile app
 
 ## Getting Started
 
