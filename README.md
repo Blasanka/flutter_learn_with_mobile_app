@@ -1,6 +1,6 @@
-# student_resource_mobile
+# student_management_mobile
 
-Student Resource mobile app
+Student Management mobile app
 
 ## Getting Started
 
