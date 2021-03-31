@@ -1,10 +1,11 @@
-import 'package:srp_parent_mobile/src/feature/student_list/data/models/student_list.model.dart';
+import 'package:flutter/material.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_list.entity.dart';
 
-class AuthenticationModelModel extends AuthenticationModel {
+class AuthenticationModel extends Authentication {
   final String task;
   final int id;
 
-  AuthenticationModelModel({
+  AuthenticationModel({
     required this.task,
     required this.id,
   }) : super(id: id, task: task);

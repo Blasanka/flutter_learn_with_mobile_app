@@ -7,7 +7,7 @@ class LoadingScreen extends StatelessWidget {
       body: Container(
         child: Center(
           child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors?.blue[800] ?? Colors.transparent)),
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[800] ?? Colors.transparent)),
         ),
       ),
     );

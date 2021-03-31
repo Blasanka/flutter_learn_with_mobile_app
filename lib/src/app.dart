@@ -5,7 +5,9 @@ import 'package:srp_parent_mobile/src/core/localization/localization.constants.d
 import 'package:srp_parent_mobile/src/core/presentation/loading.screen.dart';
 import 'package:srp_parent_mobile/src/core/route/route.dart';
 import 'package:srp_parent_mobile/src/core/theme/dark_theme.data.dart';
-import 'package:srp_parent_mobile/src/feature/authentication/presentation/screens/characters.screen.dart';
+import 'package:srp_parent_mobile/src/core/theme/light_theme.data.dart';
+import 'package:srp_parent_mobile/src/feature/authentication/presentation/screens/authentication.screen.dart';
+import 'package:srp_parent_mobile/src/feature/authentication/presentation/screens/splash.screen.dart';
 
 class SRPApp extends StatefulWidget {
   const SRPApp({Key? key}) : super(key: key);
@@ -66,8 +68,10 @@ class _SRPAppState extends State<SRPApp> {
           }
           return supportedLocales.first;
         },
-        theme: DarkTheme.getTheme,
-        home: CharactersScreen(),
+        theme: LightTheme.getTheme,
+        darkTheme: DarkTheme.getTheme,
+        themeMode: ThemeMode.system,
+        home: LoginScreen(),
         onGenerateRoute: AppRouter.onGenerateRoute,
       );
     }
