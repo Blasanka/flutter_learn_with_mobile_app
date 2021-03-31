@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:srp_parent_mobile/src/core/domain/usecases/usecase.dart';
 import 'package:srp_parent_mobile/src/core/error/failures.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/domain/repositories/student_list.repository.dart';

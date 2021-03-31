@@ -1,6 +1,6 @@
 import 'package:srp_parent_mobile/src/core/error/exception.dart';
 import 'package:srp_parent_mobile/src/core/error/failures.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:dartz/dartz.dart';
 import 'package:srp_parent_mobile/src/core/network/network.info.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/data/datasources/student_list_remote.datasource.dart';

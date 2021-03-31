@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student_episode.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_address.entity.dart';
 
 class AddressModel extends Address {
   AddressModel({

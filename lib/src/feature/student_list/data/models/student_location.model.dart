@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student_location.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_location.entity.dart';
 
 class CompanyModel extends StudentLocation {
 

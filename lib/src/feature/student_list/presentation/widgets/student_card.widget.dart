@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:progressive_image/progressive_image.dart';
 import 'package:srp_parent_mobile/src/core/constants.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student_episode.entity.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student_location.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_address.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_location.entity.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/presentation/widgets/status_spicies.widget.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/presentation/screens/student_detail.screen.dart';
 

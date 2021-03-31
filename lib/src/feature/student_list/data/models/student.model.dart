@@ -1,8 +1,8 @@
-import 'package:srp_parent_mobile/src/core/data/models/student_episode.model.dart';
-import 'package:srp_parent_mobile/src/core/data/models/student_location.model.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/data/models/student_address.model.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_address.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/data/models/student_location.model.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:meta/meta.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student_episode.entity.dart';
 
 class StudentModel extends Student {
   StudentModel({

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:srp_parent_mobile/src/core/data/models/student.model.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/data/models/student.model.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:srp_parent_mobile/src/core/error/exception.dart';
 import 'package:http/http.dart' as http;
 

@@ -1,6 +1,5 @@
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
-import 'package:graphql/client.dart';
 import 'package:http/http.dart' as http;
 import 'package:srp_parent_mobile/src/core/network/network.info.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/data/datasources/authentication_remote.datasource.dart';
@@ -54,13 +53,13 @@ Future<void> init() async {
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => DataConnectionChecker());
 
-  sl.registerLazySingleton(
-    () => GraphQLClient(
-      cache: InMemoryCache(),
-      link: HttpLink(
-        uri: 'https://rickandmortyapi.com/graphql',
-      ),
-    ),
-  );
+  // sl.registerLazySingleton(
+  //   () => GraphQLClient(
+  //     cache: InMemoryCache(),
+  //     link: HttpLink(
+  //       uri: 'https://rickandmortyapi.com/graphql',
+  //     ),
+  //   ),
+  // );
   
 }

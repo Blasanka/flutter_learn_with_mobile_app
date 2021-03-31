@@ -1,4 +1,6 @@
-import 'package:graphql/client.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:srp_parent_mobile/src/core/data/models/user.model.dart';
 import 'package:srp_parent_mobile/src/core/domain/entities/user.entity.dart';
 import 'package:srp_parent_mobile/src/core/error/exception.dart';
@@ -11,61 +13,33 @@ abstract class AuthenticationRemoteDataSource {
 }
 
 class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSource {
-  final GraphQLClient graphQLClient;
+  final http.Client httpClient;
 
-  AuthenticationRemoteDataSourceImpl(this.graphQLClient);
+  AuthenticationRemoteDataSourceImpl(this.httpClient);
 
   @override
   Future<User> login() async {
     UserModel? user;
-    const String readStudent = r'''
-        query student ($nPage: Int){
-          student (page: $nPage) {
-            info {
-              pages
-              next
-            }
-            results {
-              id
-              name
-              gender
-              image
-              status
-              species
-              type
-              origin {
-                name
-              }
-              location {
-                id
-                name
-              }
-              episode {
-                name
-                episode
-              }
-            }
-          }
-        }
-      ''';
+    const String url = '';
 
-    final QueryOptions options = QueryOptions(
-      documentNode: gql(readStudent),
-      variables: {
-        'nPage': 0,
-      },
-    );
+    // final QueryOptions options = QueryOptions(
+    //   documentNode: gql(readStudent),
+    //   variables: {
+    //     'nPage': 0,
+    //   },
+    // );
+    //
+    final http.Response result = await httpClient.get(url);
 
-    final QueryResult result = await graphQLClient.query(options);
-
-    if (result.hasException) {
-      print(result.exception.toString());
+    if (result.statusCode >= 500) {
+      print(result.body);
       throw ServerException();
     }
-    
-   for (var jsonMap in (result.data['student']['results'] as List<dynamic>)) {
-     user = UserModel.fromJson(jsonMap);
-   }
+
+    var body = json.decode(result.body);
+    for (var jsonMap in (body['student']['results'] as List<dynamic>)) {
+       user = UserModel.fromJson(jsonMap);
+    }
     return user!;
   }
 }

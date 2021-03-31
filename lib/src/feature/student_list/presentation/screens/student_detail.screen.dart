@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:srp_parent_mobile/src/core/constants.dart';
-import 'package:srp_parent_mobile/src/core/domain/entities/student.entity.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/presentation/widgets/badge.widget.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/presentation/widgets/status_spicies.widget.dart';
 
