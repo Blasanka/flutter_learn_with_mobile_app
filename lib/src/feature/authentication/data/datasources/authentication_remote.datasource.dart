@@ -29,7 +29,7 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
     //   },
     // );
     //
-    final http.Response result = await httpClient.get(url);
+    final http.Response result = await httpClient.get(Uri.parse(url));
 
     if (result.statusCode >= 500) {
       print(result.body);

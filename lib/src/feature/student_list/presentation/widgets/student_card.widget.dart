@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:progressive_image/progressive_image.dart';
-import 'package:srp_parent_mobile/src/core/constants.dart';
+import 'package:srp_parent_mobile/src/core/constants/app_assets_paths.dart';
+import 'package:srp_parent_mobile/src/core/constants/dimensions.dart';
+import 'package:srp_parent_mobile/src/core/route/route.constants.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student.entity.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_address.entity.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/domain/entities/student_location.entity.dart';
-import 'package:srp_parent_mobile/src/feature/authentication/presentation/widgets/status_spicies.widget.dart';
-import 'package:srp_parent_mobile/src/feature/student_list/presentation/screens/student_detail.screen.dart';
+import 'package:srp_parent_mobile/src/feature/student_profile/presentation/screens/student_profile.screen.dart';
+import 'package:srp_parent_mobile/src/feature/student_profile/presentation/widgets/student_class.widget.dart';
 
 class StudentCard extends StatelessWidget {
   final Student student;
@@ -16,10 +18,9 @@ class StudentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
+        Navigator.pushReplacementNamed(
           context,
-          MaterialPageRoute(
-              builder: (context) => StudentDetailScreen(student)),
+          RouteConstants.mainScreen,
         );
       },
       child: Padding(
@@ -27,7 +28,7 @@ class StudentCard extends StatelessWidget {
         child: Material(
           type: MaterialType.card,
           elevation: 4.0,
-          color: kLightGrey,
+          color: Theme.of(context).primaryColorDark,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
@@ -42,18 +43,18 @@ class StudentCard extends StatelessWidget {
                     topLeft: const Radius.circular(10.0),
                   ),
                   child: Container(
-                    height: 170,
+                    height: Dimensions.studentCardHeight,
                     child: Hero(
                       tag: student.id,
                       child: ProgressiveImage(
                         placeholder: AssetImage(
-                          'assets/images/blur-image.png',
+                          AppAssetPaths.blurImage,
                         ),
                         thumbnail: AssetImage(
-                          'assets/images/blur-image.png',
+                          AppAssetPaths.blurImage,
                         ),
-                        width: 180,
-                        height: 170,
+                        width: Dimensions.stCardImgWidth,
+                        height: Dimensions.stCardImgHeight,
                         image: NetworkImage(
                           student.imageUrl,
                         ),
@@ -66,12 +67,12 @@ class StudentCard extends StatelessWidget {
                 flex: 3,
                 child: _StudentDescription(
                   name: student.name,
-                  status: student.status,
-                  species: student.species,
+                  classTeacher: student.classTeacher,
+                  principal: student.principal,
                   gender: student.gender,
                   address: student.address,
                   location: student.location,
-                  origin: student.origin,
+                  grade: student.principal,
                 ),
               ),
             ],
@@ -86,20 +87,20 @@ class _StudentDescription extends StatelessWidget {
   const _StudentDescription({
     Key? key,
     this.name,
-    this.status,
-    this.species,
+    this.classTeacher,
+    this.principal,
     this.gender,
     this.address,
     this.location,
-    this.origin,
+    this.grade,
   }) : super(key: key);
 
   final String? name;
-  final String? status;
-  final String? species;
+  final String? classTeacher;
+  final String? principal;
   final String? gender;
   final Address? address;
-  final String? origin;
+  final String? grade;
   final StudentLocation? location;
 
   @override
@@ -111,10 +112,10 @@ class _StudentDescription extends StatelessWidget {
         style: Theme.of(context).textTheme.headline4,
       ),
       const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-      StatusSpecies(status: status ?? '', species: species ?? ''),
+      StudentClass(classTeacher: classTeacher ?? '', principal: principal ?? ''),
       const Padding(padding: EdgeInsets.symmetric(vertical: 5.0)),
       Text(
-        'Last known location',
+        'Principal',
         style: Theme.of(context).textTheme.bodyText2,
       ),
       const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
@@ -125,7 +126,7 @@ class _StudentDescription extends StatelessWidget {
       ),
       const Padding(padding: EdgeInsets.symmetric(vertical: 5.0)),
       Text(
-        'First seen in',
+        'Class Teacher',
         style: Theme.of(context).textTheme.bodyText2,
       ),
       const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),

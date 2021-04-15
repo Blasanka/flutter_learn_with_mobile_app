@@ -20,11 +20,11 @@ class StudentListRemoteDataSourceImpl implements StudentListRemoteDataSource {
   @override
   Future<List<Student>> getStudent(int page) async {
     List<Student> student = [];
-    const String url = 'https://jsonplaceholder.typicode.com/users';
+    final String url = 'https://jsonplaceholder.typicode.com/users';
 
     final Map<String, String> headers = {};
 
-    final http.Response result = await http.get(url, headers: headers);
+    final http.Response result = await http.get(Uri.parse(url), headers: headers);
 
     if (result.statusCode >= 500) {
       print(result.body.toString());

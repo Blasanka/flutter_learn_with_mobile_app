@@ -13,7 +13,7 @@ class StudentProvider extends BaseProvider {
   Random _random = Random();
   List<Student> _student = [];
 
-  List<Student> get student => _student;
+  List<Student> get students => _student;
 
   Future<void> fetchStudent() async {
     setState(ViewState.Busy);

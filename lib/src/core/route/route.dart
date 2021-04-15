@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:srp_parent_mobile/src/core/presentation/unknown.screen.dart';
+import 'package:srp_parent_mobile/src/core/presentation/screens/main.screen.dart';
+import 'package:srp_parent_mobile/src/core/presentation/screens/unknown.screen.dart';
 import 'package:srp_parent_mobile/src/core/route/route.constants.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/presentation/screens/authentication.screen.dart';
-import 'package:srp_parent_mobile/src/feature/authentication/presentation/screens/splash.screen.dart';
+import 'package:srp_parent_mobile/src/core/presentation/screens/splash.screen.dart';
 import 'package:srp_parent_mobile/src/feature/student_list/presentation/screens/student_list.screen.dart';
 
 class AppRouter {
@@ -30,14 +31,11 @@ class AppRouter {
             );
           },
         );
-      case RouteConstants.studentProfileScreen:
+      case RouteConstants.mainScreen:
       // final todoModel = settings.arguments;
         return MaterialPageRoute(
           builder: (context) {
-            return SplashScreen(
-              // key: ValueKey(todoModel.id),
-              // todoModel: todoModel,
-            );
+            return MainScreen();
           },
         );
       case RouteConstants.bulletinsScreen:

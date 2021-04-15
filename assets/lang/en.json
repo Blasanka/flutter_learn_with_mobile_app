@@ -1,6 +1,19 @@
 {
   "unknown": "Unknown Screen",
-  "dashboardTitle": "Dashboard",
+  "studentProfileTitle": "Profile",
+  "noticesTitle": "Notices",
+  "calendarTitle": "Calendar",
   "login": "Login",
-  "somethingWrong": "Oops, something wrong happened"
+  "somethingWrong": "Oops, something wrong happened",
+  "communication": "Communication",
+  "yearPlanner": "Year Planner",
+  "attendance": "Attendance",
+  "principal": "Principal",
+  "gender": "Gender",
+  "location": "Location",
+  "address": "Address",
+  "type": "Type",
+  "grade": "Grade",
+  "classTeacher": "Class Teacher",
+  "classTeacherContact": "Class Teacher's contact no"
 }

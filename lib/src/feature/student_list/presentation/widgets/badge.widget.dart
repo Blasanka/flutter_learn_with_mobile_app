@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:srp_parent_mobile/src/core/constants.dart';
+import 'package:srp_parent_mobile/src/core/constants/app_colors.dart';
 
 class Badge extends StatelessWidget {
   const Badge({
@@ -20,7 +20,7 @@ class Badge extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(30)),
-          color: kLightGrey),
+          color: AppColors.kLightGrey),
     );
   }
 }

@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:srp_parent_mobile/src/core/constants/dimensions.dart';
 import 'package:srp_parent_mobile/src/core/localization/localization.constants.dart';
 import 'package:srp_parent_mobile/src/core/presentation/base.view.dart';
-import 'package:srp_parent_mobile/src/core/presentation/empty_space.widget.dart';
+import 'package:srp_parent_mobile/src/core/presentation/widgets/app_bar.widget.dart';
+import 'package:srp_parent_mobile/src/core/presentation/widgets/empty_space.widget.dart';
 import 'package:srp_parent_mobile/src/core/provider/view.state.dart';
 import 'package:srp_parent_mobile/src/core/route/route.constants.dart';
 import 'package:srp_parent_mobile/src/feature/authentication/presentation/providers/auth.provider.dart';
+import 'package:srp_parent_mobile/src/feature/student_list/presentation/providers/student_list.provider.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -89,9 +91,10 @@ class _LoginScreenState extends State<LoginScreen>
       onModelReady: (model) => model.isLoggedIn(),
       builder: (context, provider, child) => Scaffold(
         key: _scaffoldKey,
-        appBar: AppBar(
-          title: Text(getTranslated(context, 'login') ?? "",
-              style: Theme.of(context).textTheme.headline6),
+        appBar: AppBarWidget(
+          title: getTranslated(context, 'login') ?? "",
+          actions: [
+          ],
         ),
         body: provider.state == ViewState.Busy
             ? Center(
@@ -120,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen>
                 prefixIcon: Icon(Icons.person),
               ),
             ),
-            EmptySpaceWidget(height: Dimensions.kEmptySpace),
+            EmptySpaceWidget(height: Dimensions.kDefaultSpace),
             TextFormField(
               decoration: InputDecoration(
                 labelText: "Password",

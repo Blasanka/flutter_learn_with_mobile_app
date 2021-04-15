@@ -1,33 +1,44 @@
 import 'package:flutter/material.dart';
-
-final Color? _primaryColor = Colors.yellow[700];
-final Color? _appBarColor = Colors.grey[100];
-final Color _appBarIconColor = Colors.black87;
-final Color _foreGroundColor = Colors.white;
+import 'package:google_fonts/google_fonts.dart';
+import 'package:srp_parent_mobile/src/core/constants/app_colors.dart';
 
 class LightTheme {
   LightTheme._();
 
   static get getTheme => ThemeData(
-    cursorColor: _primaryColor,
-    textSelectionColor: _primaryColor,
+    cursorColor: AppColors.primaryColor,
+    textSelectionColor: AppColors.primaryColor,
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.grey[200],
-    primaryColor: _primaryColor,
-    indicatorColor: _primaryColor,
-    accentColor: _primaryColor,
-    buttonColor: _primaryColor,
-    iconTheme: IconThemeData(color: _primaryColor),
+    scaffoldBackgroundColor: Colors.white,
+    primaryColor: AppColors.primaryColor,
+    primaryColorDark: AppColors.primaryColorDark,
+    indicatorColor: AppColors.primaryColor,
+    accentColor: AppColors.primaryColor,
+    buttonColor: AppColors.primaryColor,
+    iconTheme: IconThemeData(color: Colors.black),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     appBarTheme: AppBarTheme(
-      color: _appBarColor,
+      color: AppColors.primaryColorDark,
       iconTheme: IconThemeData(
-        color: _appBarIconColor,
+        color: AppColors.appBarIconColor,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      unselectedItemColor: AppColors.inactiveColorLight,
+      selectedItemColor: AppColors.primaryColor,
+      selectedLabelStyle: TextStyle(
+        color: AppColors.primaryColor,
+        fontSize: 15,
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: AppColors.kDarkGrey,
+        fontSize: 15,
       ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: _primaryColor,
-        foregroundColor: _foreGroundColor
+        backgroundColor: AppColors.primaryColor,
+        foregroundColor: AppColors.foreGroundColor
     ),
   );
 }
